@@ -55,14 +55,6 @@
     </style>
 </head>
 <body class="scroll-smooth">
-    <!-- Chosen Palette: Warm Neutrals & Ink (BG: #FDFBF8, Text: #333333, Accent: #A97C50, Secondary: #D3B89F) -->
-    <!-- Application Structure Plan: A single-page, narrative scrolling application with a sticky navigation header. This structure was chosen to guide the user through the compelling story of Mirror Space, from abstract vision to concrete execution. It starts with the core mission (the "Why"), moves to the physical space and cultural content (the "What"), details the business model (the "How"), and concludes with the future roadmap and impact. This flow is more engaging than a traditional report structure, turning a business plan into an exploratory journey. Interactive elements like tabs for the space, a dynamic chart for financials, and a clickable timeline for the roadmap encourage user engagement and deeper understanding at each stage. -->
-    <!-- Visualization & Content Choices: 
-        1. Report Info: Brand Spirit (反思性, 包容性, 创造性) -> Goal: Organize/Inform -> Method: Interactive Cards (HTML/CSS) -> Interaction: Hover to highlight -> Justification: Breaks up text and makes abstract concepts more tangible and visually appealing.
-        2. Report Info: Functional Zones (书区, 咖啡区, etc.) -> Goal: Organize/Explore -> Method: Tabbed Interface (HTML/CSS/JS) -> Interaction: Click tabs to switch content -> Justification: Organizes detailed information into a compact, user-controlled component, simulating the exploration of a physical space.
-        3. Report Info: Revenue Breakdown (收益占比) -> Goal: Compare/Inform -> Method: Doughnut Chart (Chart.js) -> Interaction: Hover over chart segments to display corresponding details in a text panel -> Justification: A doughnut chart is ideal for showing parts of a whole. The interactivity directly links quantitative data (percentages) with qualitative value propositions (在地特色价值), enhancing comprehension.
-        4. Report Info: Development Plan (发展规划) -> Goal: Show Change/Process -> Method: Interactive Vertical Timeline (HTML/CSS/JS) -> Interaction: Click on a stage to view its details -> Justification: Transforms a static table into a dynamic and forward-looking narrative of growth, making the plan feel more alive and actionable. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
     <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm transition-all duration-300">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -88,6 +80,7 @@
             </p>
             <!-- 插入第一张概念图：宏大视觉 -->
             <img class="placeholder-img" src="https://placehold.co/1200x400/D3B89F/A97C50?text=概念图：工业质感与镜面反射美学的完美融合" alt="镜子空间概念图">
+            <p class="text-sm text-gray-500 mt-2">图片来源：品牌概念视觉稿</p>
         </section>
 
         <section id="vision" class="py-20 bg-white">
@@ -123,11 +116,14 @@
                     <p class="mt-2 text-gray-600">融合老工业材料质感与当代温镜面美学，打造多元功能体验区。</p>
                 </div>
                 <div class="max-w-4xl mx-auto">
-                    <!-- 动态切换的图片容器，初始显示“书区”的占位图 -->
-                    <img class="placeholder-img mb-8 transition-opacity duration-500" 
-                         id="space-image"
-                         src="https://placehold.co/800x450/F0E9E1/A97C50?text=书区：东北阅读计划专区" 
-                         alt="书区：东北阅读计划专区">
+                    <!-- 动态切换的图片容器及来源说明 -->
+                    <div class="mb-8">
+                        <img class="placeholder-img transition-opacity duration-500" 
+                             id="space-image"
+                             src="https://placehold.co/800x450/F0E9E1/A97C50?text=书区：东北阅读计划专区" 
+                             alt="书区：东北阅读计划专区">
+                        <p id="space-image-source" class="text-sm text-gray-500 mt-2 text-center">图片来源：空间概念设计稿</p>
+                    </div>
 
                     <div class="mb-8 flex justify-center flex-wrap gap-2 md:gap-4 border-b border-gray-200">
                         <button class="tab-btn active text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-1">书区</button>
@@ -142,7 +138,7 @@
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-2">
                             <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">咖啡区：东北四季</h3>
-                            <p class="text-gray-700">提供精品咖啡与特调饮品。以“东北四季”为灵感，创作季节限定饮品与轻食系列，让味蕾也能体验到这片土地的独特风情与温度。</p>
+                            <p class="text-gray-700">提供精品手冲与特调饮品。以“东北四季”为灵感，创作季节限定饮品系列，让味蕾也能体验到这片土地的独特风情与温度。</p>
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-3">
                             <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">文创区：东北意象</h3>
@@ -202,6 +198,7 @@
                          src="uploaded:4b90935eb45739d27978c708ed5abe18.JPG-e68c8567-be14-42ae-a217-a162c46144bb" 
                          alt="沙龙活动现场图"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/D3B89F/FFFFFF?text=活动现场图（加载失败，请刷新）';">
+                    <p class="text-sm text-gray-500 mt-2">图片来源：用户上传文件</p>
                 </div>
             </div>
         </section>
@@ -327,6 +324,7 @@
                 <!-- 插入愿景图 -->
                 <div class="mt-12">
                     <img class="placeholder-img" src="https://placehold.co/1200x250/A97C50/FDFBF8?text=愿景图：东北城市夜景与文化地标（高分辨率大图）" alt="文化使命愿景图">
+                    <p class="text-sm text-gray-500 mt-2">图片来源：城市愿景合成图</p>
                 </div>
             </div>
         </section>
@@ -377,23 +375,28 @@
             const spaceImageMap = {
                 'space-tab-1': { 
                     src: 'https://placehold.co/800x450/F0E9E1/A97C50?text=书区：东北阅读计划专区', 
-                    alt: '书区：东北阅读计划专区' 
+                    alt: '书区：东北阅读计划专区',
+                    source: '空间概念设计稿'
                 },
                 'space-tab-2': { 
                     src: 'https://placehold.co/800x450/D3B89F/FFFFFF?text=咖啡区：四季特调饮品台', 
-                    alt: '咖啡区：四季特调饮品台' 
+                    alt: '咖啡区：四季特调饮品台',
+                    source: '咖啡区效果图'
                 },
                 'space-tab-3': { 
                     src: 'https://placehold.co/800x450/C39C77/FDFBF8?text=文创区：东北意象文创展示', 
-                    alt: '文创区：东北意象文创展示' 
+                    alt: '文创区：东北意象文创展示',
+                    source: '文创商品陈列设想'
                 },
                 'space-tab-4': { 
                     src: 'https://placehold.co/800x450/A97C50/F0E9E1?text=沙龙区：活动灵活布局', 
-                    alt: '沙龙区：活动灵活布局' 
+                    alt: '沙龙区：活动灵活布局',
+                    source: '多功能区设计草图'
                 },
             };
 
             const spaceImage = document.getElementById('space-image');
+            const spaceImageSource = document.getElementById('space-image-source');
             const tabButtons = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.space-tab-content');
 
@@ -413,13 +416,14 @@
                         }
                     });
 
-                    // 2. 切换图片源
+                    // 2. 切换图片源和来源文本
                     if (spaceImage && spaceImageMap[targetId]) {
                         // 优化：添加一个短暂的透明度过渡效果
                         spaceImage.classList.add('opacity-0');
                         setTimeout(() => {
                             spaceImage.src = spaceImageMap[targetId].src;
                             spaceImage.alt = spaceImageMap[targetId].alt;
+                            spaceImageSource.innerText = '图片来源：' + spaceImageMap[targetId].source; // Update source text
                             spaceImage.classList.remove('opacity-0');
                         }, 250); // 配合 CSS transition-opacity duration-500
                     }
