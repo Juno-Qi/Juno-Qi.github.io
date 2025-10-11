@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="zh-CN"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;镜子空间 Mirror Space | 交互式商业计划书&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Noto Sans SC', sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #FDFBF8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #333333;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.chart-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 450px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-left: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-right: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 300px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-height: 400px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@media (min-width: 768px) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.chart-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>height: 400px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.nav-link.active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #A97C50;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: 500;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.tab-btn.active {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-color: #A97C50;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #F8F3ED;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #A97C50;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.timeline-item.active .timeline-dot {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #A97C50;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: scale(1.5);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.timeline-item.active .timeline-content h3 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #A97C50;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="scroll-smooth"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Chosen Palette: Warm Neutrals &amp; Ink (BG: #FDFBF8, Text: #333333, Accent: #A97C50, Secondary: #D3B89F) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Application Structure Plan: A single-page, narrative scrolling application with a sticky navigation header. This structure was chosen to guide the user through the compelling story of Mirror Space, from abstract vision to concrete execution. It starts with the core mission (the "Why"), moves to the physical space and cultural content (the "What"), details the business model (the "How"), and concludes with the future roadmap and impact. This flow is more engaging than a traditional report structure, turning a business plan into an exploratory journey. Interactive elements like tabs for the space, a dynamic chart for financials, and a clickable timeline for the roadmap encourage user engagement and deeper understanding at each stage. --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Visualization &amp; Content Choices:<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>1. Report Info: Brand Spirit (反思性, 包容性, 创造性) -&gt; Goal: Organize/Inform -&gt; Method: Interactive Cards (HTML/CSS) -&gt; Interaction: Hover to highlight -&gt; Justification: Breaks up text and makes abstract concepts more tangible and visually appealing.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>2. Report Info: Functional Zones (书区, 咖啡区, etc.) -&gt; Goal: Organize/Explore -&gt; Method: Tabbed Interface (HTML/CSS/JS) -&gt; Interaction: Click tabs to switch content -&gt; Justification: Organizes detailed information into a compact, user-controlled component, simulating the exploration of a physical space.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>3. Report Info: Revenue Breakdown (收益占比) -&gt; Goal: Compare/Inform -&gt; Method: Doughnut Chart (Chart.js) -&gt; Interaction: Hover over chart segments to display corresponding details in a text panel -&gt; Justification: A doughnut chart is ideal for showing parts of a whole. The interactivity directly links quantitative data (percentages) with qualitative value propositions (在地特色价值), enhancing comprehension.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>4. Report Info: Development Plan (发展规划) -&gt; Goal: Show Change/Process -&gt; Method: Interactive Vertical Timeline (HTML/CSS/JS) -&gt; Interaction: Click on a stage to view its details -&gt; Justification: Transforms a static table into a dynamic and forward-looking narrative of growth, making the plan feel more alive and actionable. --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm transition-all duration-300"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;nav class="container mx-auto px-6 py-3 flex justify-between items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="text-xl font-bold text-gray-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>镜子空间 &lt;span class="text-gray-500 font-light"&gt;Mirror Space&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="hidden md:flex space-x-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="#vision" class="nav-link text-gray-600 hover:text-gray-900 transition-colors"&gt;品牌理念&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="#space" class="nav-link text-gray-600 hover:text-gray-900 transition-colors"&gt;空间设计&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="#content" class="nav-link text-gray-600 hover:text-gray-900 transition-colors"&gt;文化内容&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="#business" class="nav-link text-gray-600 hover:text-gray-900 transition-colors"&gt;商业模式&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="#roadmap" class="nav-link text-gray-600 hover:text-gray-900 transition-colors"&gt;发展规划&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;a href="#impact" class="nav-link text-gray-600 hover:text-gray-900 transition-colors"&gt;文化使命&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="hero" class="container mx-auto px-6 py-20 md:py-32 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-800 mb-4"&gt;立于镜像平面，搭建立体人文世界。&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>一个融合图书、文创、咖啡与沙龙的复合型空间，致力于成为挖掘、整理、再造并输出新东北文化的策源地。</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="vision" class="py-20 bg-white"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold text-gray-800"&gt;品牌理念与文化精神&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-gray-600"&gt;以镜为媒，折射东北的新文化之光。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid md:grid-cols-3 gap-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gray-50 p-8 rounded-lg text-center transform hover:scale-105 hover:shadow-lg transition-transform duration-300"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                   </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold mb-2"&gt;反思性&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;让人重新看见自我与地方的关系，在镜像中回望与自省。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gray-50 p-8 rounded-lg text-center transform hover:scale-105 hover:shadow-lg transition-transform duration-300"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                       </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold mb-2"&gt;包容性&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;在工业与文艺、过去与未来之间，寻找温和而坚定的平衡。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gray-50 p-8 rounded-lg text-center transform hover:scale-105 hover:shadow-lg transition-transform duration-300"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold mb-2"&gt;创造性&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;以文化为材料，用当代的审美重塑东北的精神面貌。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="space" class="py-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold text-gray-800"&gt;空间设计与在地融合&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-gray-600"&gt;融合老工业材料质感与当代温镜面美学，打造多元功能体验区。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-4xl mx-auto"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="mb-8 flex justify-center flex-wrap gap-2 md:gap-4 border-b border-gray-200"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button class="tab-btn active text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-1"&gt;书区&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button class="tab-btn text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-2"&gt;咖啡区&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button class="tab-btn text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-3"&gt;文创区&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;button class="tab-btn text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-4"&gt;沙龙区&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div id="space-tabs-content" class="bg-white p-8 rounded-lg shadow-md"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="space-tab-content" id="space-tab-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-2xl font-semibold mb-3 text-[#A97C50]"&gt;书区：东北阅读计划&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-700"&gt;精选文学、人文及地方志书单，设立“东北阅读计划”专区，聚焦地方作家与影像志，构建一个深度阅读与研究东北文化的窗口。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="space-tab-content hidden" id="space-tab-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-2xl font-semibold mb-3 text-[#A97C50]"&gt;咖啡区：东北四季&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-700"&gt;提供精品手冲与特调饮品。以“东北四季”为灵感，创作季节限定饮品系列，让味蕾也能体验到这片土地的独特风情与温度。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="space-tab-content hidden" id="space-tab-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-2xl font-semibold mb-3 text-[#A97C50]"&gt;文创区：东北意象&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-700"&gt;推出“东北意象”系列联名文创，包括明信片、帆布袋、海报等。结合东北符号进行当代设计，将文化记忆转化为可带走的生活美学。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="space-tab-content hidden" id="space-tab-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-2xl font-semibold mb-3 text-[#A97C50]"&gt;沙龙区：镜中东北&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;p class="text-gray-700"&gt;灵活的活动空间，定期举办讲座、展览与共读会。以“镜中东北”为主题进行策展，并邀请艺术家驻地创作，成为思想碰撞与艺术发生的现场。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="content" class="py-20 bg-white"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold text-gray-800"&gt;文化内容体系&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-gray-600"&gt;通过策展、出版与系列活动，持续产出高质量文化内容。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid lg:grid-cols-2 gap-12 items-start"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-semibold mb-6 text-gray-700 border-l-4 border-[#D3B89F] pl-4"&gt;策展与出版计划&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;ul class="space-y-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li class="flex items-start"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span class="text-[#A97C50] font-bold mr-3 mt-1"&gt;●&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p&gt;&lt;strong class="font-semibold"&gt;“镜中东北”年度书单：&lt;/strong&gt; 聚焦东北作家、摄影师与地方叙事，构建权威性文化索引。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li class="flex items-start"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;span class="text-[#A97C50] font-bold mr-3 mt-1"&gt;●&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p&gt;&lt;strong class="font-semibold"&gt;地方出版合作：&lt;/strong&gt; 与本地出版社联合策划选题，深度挖掘工业记忆、城市人文等主题。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-semibold mb-6 text-gray-700 border-l-4 border-[#D3B89F] pl-4"&gt;核心文化活动&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="space-y-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-gray-50 p-4 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-lg"&gt;「镜像读书会」&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-600"&gt;以东北文学为主题的系列共读活动。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-gray-50 p-4 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-lg"&gt;「镜城沙龙」&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-600"&gt;邀请作家、学者探讨“地方性与现代性”。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-gray-50 p-4 rounded-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-semibold text-lg"&gt;「冬夜诗会」&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-600"&gt;以音乐与诗歌温暖沈阳的漫长冬季。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="business" class="py-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold text-gray-800"&gt;商业模式与价值输出&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-gray-600"&gt;在商业与文化之间建立正向循环，实现可持续发展。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;canvas id="revenueChart"&gt;&lt;/canvas&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-8 rounded-lg shadow-md"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-semibold mb-2" id="revenue-title"&gt;收益构成&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 mb-4 text-3xl font-bold" id="revenue-percentage"&gt;100%&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-semibold text-lg mb-2 text-[#A97C50]"&gt;在地特色价值&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-700 min-h-[100px]" id="revenue-description"&gt;将鼠标悬停在图表板块上，查看每个模块的在地价值特色。我们确保每一份收益都与文化使命紧密相连。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="roadmap" class="py-20 bg-white"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold text-gray-800"&gt;发展规划&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p class="mt-2 text-gray-600"&gt;清晰的四阶段发展路径，从沈阳出发，辐射北方。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-4xl mx-auto flex"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="w-1/4 relative"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div class="border-r-2 border-gray-200 absolute h-full top-0" style="left: 15px"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;ul class="space-y-12"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;li class="timeline-item active" data-target="timeline-content-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div class="flex items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-4 h-4 bg-white rounded-full"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="pl-8 timeline-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h3 class="text-lg font-semibold transition-colors duration-300"&gt;启动期&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>&lt;li class="timeline-item" data-target="timeline-content-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div class="flex items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-4 h-4 bg-white rounded-full"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="pl-8 timeline-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h3 class="text-lg font-semibold text-gray-500 transition-colors duration-300"&gt;成长期&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>&lt;li class="timeline-item" data-target="timeline-content-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div class="flex items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-4 h-4 bg-white rounded-full"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="pl-8 timeline-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h3 class="text-lg font-semibold text-gray-500 transition-colors duration-300"&gt;扩展期&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>&lt;li class="timeline-item" data-target="timeline-content-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;div class="flex items-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;div class="w-4 h-4 bg-white rounded-full"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;div class="pl-8 timeline-content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                        </span>&lt;h3 class="text-lg font-semibold text-gray-500 transition-colors duration-300"&gt;输出期&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="w-3/4 pl-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;div id="timeline-details" class="bg-gray-50 p-8 rounded-lg min-h-[250px]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="timeline-content-panel" id="timeline-content-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-500 mb-2 font-medium"&gt;时间：0-3个月&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-xl font-bold mb-3"&gt;目标：空间搭建与视觉发布&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-700"&gt;完成空间主体建设、室内设计与装修，并正式发布品牌视觉系，为开业和市场推广奠定坚实基础。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;div class="timeline-content-panel hidden" id="timeline-content-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-500 mb-2 font-medium"&gt;时间：3-12个月&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-xl font-bold mb-3"&gt;目标：建立沈阳文化影响力&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-700"&gt;通过高质量的文化活动和稳定的运营，吸引核心客群，建立在沈阳本地的文化影响力，实现稳定客流与初步盈利。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>&lt;div class="timeline-content-panel hidden" id="timeline-content-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-500 mb-2 font-medium"&gt;时间：1-2年&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-xl font-bold mb-3"&gt;目标：推出“东北阅读计划”品牌活动&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-700"&gt;将“东北阅读计划”打造为具有全国影响力的品牌活动，并同步实现文化IP的产品化，拓展线上收益渠道。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>&lt;div class="timeline-content-panel hidden" id="timeline-content-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-500 mb-2 font-medium"&gt;时间：2年+&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;h4 class="text-xl font-bold mb-3"&gt;目标：形成东北文化复合空间品牌矩阵&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;p class="text-gray-700"&gt;将成功的单店模式标准化，形成可复制的品牌矩阵，并向其他北方城市进行模式输出，成为东北文化的地标性品牌。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="impact" class="py-20"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="container mx-auto px-6 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-bold text-gray-800"&gt;文化使命与传播策略&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p class="mt-2 text-gray-600 max-w-2xl mx-auto"&gt;不只是一个地方书店，而是东北文化“自我凝视”与“对外表达”的窗口。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="mt-12 grid md:grid-cols-3 gap-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-6 rounded-lg shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold mb-2"&gt;在地共创&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;与本地艺术家、摄影师、作家深度合作，成为创意发生的土壤。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-6 rounded-lg shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold mb-2"&gt;数字传播&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;以“镜头下的东北”为主题制作系列短片，线上扩大文化影响力。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white p-6 rounded-lg shadow-sm"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-semibold mb-2"&gt;城市联名&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600"&gt;与本地优质品牌跨界合作，共同定义城市新文化。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;footer class="bg-white"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>&lt;div class="container mx-auto px-6 py-20 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>&lt;p class="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed max-w-4xl mx-auto"&gt;"它不是复古，而是&lt;span class="font-semibold text-[#A97C50]"&gt;重生&lt;/span&gt;。&lt;br&gt;它不只是书店，而是一种文化的&lt;span class="font-semibold text-[#A97C50]"&gt;再造&lt;/span&gt;。"&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">           </span>&lt;p class="mt-8 text-gray-500"&gt;从沈阳出发，反射整个北方的光。&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">       </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', function () {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const sections = document.querySelectorAll('section');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const navLinks = document.querySelectorAll('.nav-link');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const header = document.getElementById('header');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>let lastScrollTop = 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>window.addEventListener('scroll', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>let current = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sections.forEach(section =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const sectionTop = section.offsetTop;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (pageYOffset &gt;= sectionTop - 100) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>current = section.getAttribute('id');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>navLinks.forEach(link =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>link.classList.remove('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (link.getAttribute('href').substring(1) === current) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>link.classList.add('active');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>let st = window.pageYOffset || document.documentElement.scrollTop;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (st &gt; lastScrollTop &amp;&amp; st &gt; 100){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>header.style.top = '-100px';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>header.style.top = '0';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>lastScrollTop = st &lt;= 0 ? 0 : st;<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const tabButtons = document.querySelectorAll('.tab-btn');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const tabContents = document.querySelectorAll('.space-tab-content');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>tabButtons.forEach(button =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>button.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>tabButtons.forEach(btn =&gt; btn.classList.remove('active'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>button.classList.add('active');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const targetId = button.dataset.target;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>tabContents.forEach(content =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (content.id === targetId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>content.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>content.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const revenueData = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>labels: ['咖啡与轻食', '图书与出版', '文创与艺术衍生品', '活动与合作', '空间租赁'],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>datasets: [{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>label: '收益占比',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>data: [30, 25, 25, 15, 5],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>backgroundColor: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>'#A97C50',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>'#C39C77',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>'#D3B89F',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>'#E4D4C7',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>'#F0E9E1'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>borderColor: '#FDFBF8',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>hoverOffset: 8</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const revenueDescriptions = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>'以“东北四季”为灵感的饮品系列，将地方风味融入日常消费，提供独特的味觉体验。',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>'通过策展出版物与地方作者联名，将知识转化为具有收藏价值和文化深度的产品。',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>'结合东北符号进行当代设计，让文化记忆成为可触碰、可携带的时尚生活品。',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>'通过高质量的文化活动吸引品牌联动与文化赞助，扩大社会影响力并实现商业价值。',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>'为影视拍摄与文艺展览提供独特质感的场地，成为城市文化叙事的一部分。'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const revenueTitle = document.getElementById('revenue-title');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const revenuePercentage = document.getElementById('revenue-percentage');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const revenueDescription = document.getElementById('revenue-description');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const ctx = document.getElementById('revenueChart').getContext('2d');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const revenueChart = new Chart(ctx, {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>type: 'doughnut',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>data: revenueData,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>options: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>responsive: true,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>plugins: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>legend: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>position: 'bottom',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>labels: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>padding: 20,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>font: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>size: 14,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                    </span>family: "'Noto Sans SC', sans-serif"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>tooltip: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>enabled: true</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>onHover: (event, chartElement) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (chartElement.length) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>const index = chartElement[0].index;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>revenueTitle.innerText = revenueData.labels[index];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>revenuePercentage.innerText = revenueData.datasets[0].data[index] + '%';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>revenueDescription.innerText = revenueDescriptions[index];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>revenueTitle.innerText = '收益构成';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>revenuePercentage.innerText = '100%';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>revenueDescription.innerText = '将鼠标悬停在图表板块上，查看每个模块的在地价值特色。我们确保每一份收益都与文化使命紧密相连。';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>cutout: '60%'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const timelineItems = document.querySelectorAll('.timeline-item');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const timelinePanels = document.querySelectorAll('.timeline-content-panel');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>timelineItems.forEach(item =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>item.addEventListener('click', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>timelineItems.forEach(i =&gt; i.classList.remove('active'));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>item.classList.add('active');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>const targetId = item.dataset.target;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>timelinePanels.forEach(panel =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>if (panel.id === targetId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>panel.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>panel.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
