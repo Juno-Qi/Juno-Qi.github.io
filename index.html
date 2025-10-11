@@ -124,6 +124,7 @@
                              alt="书区：东北阅读计划专区">
                         <p id="space-image-source" class="text-sm text-gray-500 mt-2 text-center">图片来源：空间概念设计稿</p>
                     </div>
+
                     <div class="mb-8 flex justify-center flex-wrap gap-2 md:gap-4 border-b border-gray-200">
                         <button class="tab-btn active text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-1">书区</button>
                         <button class="tab-btn text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-2">咖啡区</button>
@@ -137,7 +138,7 @@
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-2">
                             <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">咖啡区：东北四季</h3>
-                            <p class="text-gray-700">提供精品手冲与特调饮品。以“东北四季”为灵感，创作季节限定饮品系列，让味蕾也能体验到这片土地的独特风情与温度。</p>
+                            <p class="text-gray-700">提供精品咖啡与特调饮品。以“东北四季”为灵感，创作季节限定饮品和轻食系列，让味蕾也能体验到这片土地的独特风情与温度。</p>
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-3">
                             <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">文创区：东北意象</h3>
@@ -196,7 +197,7 @@
                          style="max-width: 600px;" 
                          src="uploaded:4b90935eb45739d27978c708ed5abe18.JPG-e68c8567-be14-42ae-a217-a162c46144bb" 
                          alt="沙龙活动现场图"
-                         onerror="this.onerror=null; this.src='4b90935eb45739d27978c708ed5abe18.JPG';">
+                         onerror="this.onerror=null; this.src='4b90935eb45739d27978c708ed5abe18.JPG'；">
                     <p class="text-sm text-gray-500 mt-2">图片来源：打盹儿书店周云蓬书籍签售活动</p>
                 </div>
             </div>
@@ -332,8 +333,8 @@
     
     <footer class="bg-white">
        <div class="container mx-auto px-6 py-20 text-center">
-           <p class="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed max-w-4xl mx-auto">"它不只是<span class="font-semibold text-[#A97C50]">书店</span>，<br>更是一种文化的<span class="font-semibold text-[#A97C50]">记录与展示</span>。"</p>
-           <p class="mt-8 text-gray-500">从沈阳出发，反射整个东北的光。</p
+           <p class="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed max-w-4xl mx-auto">"它只是<span class="font-semibold text-[#A97C50]">书店</span>，<br>更是文化的<span class="font-semibold text-[#A97C50]">记录与表达</span>。"</p>
+           <p class="mt-8 text-gray-500">从沈阳出发，反射整个东北的光。</p>
        </div>
     </footer>
 
@@ -369,11 +370,11 @@
                 lastScrollTop = st <= 0 ? 0 : st; 
             });
 
-            // --- 空间 tab 切换逻辑 (新增图片切换功能) ---
+            // --- 空间 tab 切换逻辑 (修复图片切换bug) ---
 
             const spaceImageMap = {
                 'space-tab-1': { 
-                    src: ' 书籍.png', 
+                    src: '书籍.png', 
                     alt: '书区：东北阅读计划专区',
                     source: '丹麦哥本哈根New Mags'
                 },
@@ -390,7 +391,7 @@
                 'space-tab-4': { 
                     src: '活动.png', 
                     alt: '沙龙区：活动灵活布局',
-                    source: ' 打盹儿书店吉井忍新书分享活动'
+                    source: '打盹儿书店吉井忍新书分享活动'
                 },
             };
 
@@ -415,16 +416,23 @@
                         }
                     });
 
-                    // 2. 切换图片源和来源文本
+                    // 2. 切换图片源和来源文本，并优化过渡效果
                     if (spaceImage && spaceImageMap[targetId]) {
-                        // 优化：添加一个短暂的透明度过渡效果
+                        // 强制图片淡出
                         spaceImage.classList.add('opacity-0');
+                        
+                        // 强制浏览器应用样式变化，确保过渡开始（修复可能的bug）
+                        void spaceImage.offsetWidth; 
+
+                        // 等待一段时间（略小于过渡时间）后，更改图片源并淡入
                         setTimeout(() => {
                             spaceImage.src = spaceImageMap[targetId].src;
                             spaceImage.alt = spaceImageMap[targetId].alt;
-                            spaceImageSource.innerText = '图片来源：' + spaceImageMap[targetId].source; // Update source text
+                            spaceImageSource.innerText = '图片来源：' + spaceImageMap[targetId].source;
+                            
+                            // 移除 opacity-0，图片开始淡入
                             spaceImage.classList.remove('opacity-0');
-                        }, 250); // 配合 CSS transition-opacity duration-500
+                        }, 300); 
                     }
                 });
             });
