@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>镜子空间 Mirror Space </title>
+    <title>镜子空间 Mirror Space</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +45,13 @@
         .timeline-item.active .timeline-content h3 {
             color: #A97C50;
         }
+        .placeholder-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.5rem; /* rounded-lg */
+        }
     </style>
 </head>
 <body class="scroll-smooth">
@@ -76,9 +83,11 @@
     <main>
         <section id="hero" class="container mx-auto px-6 py-20 md:py-32 text-center">
             <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-800 mb-4">立于镜像平面，搭建立体人文世界。</h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">
                 一个融合图书、文创、咖啡与沙龙的复合型文化空间，致力于成为挖掘、整理、再造并输出新东北文化的策源地。
             </p>
+            <!-- 插入第一张概念图：宏大视觉 -->
+            <img class="placeholder-img" src="https://placehold.co/1200x400/D3B89F/A97C50?text=概念图：工业质感与镜面反射美学的完美融合" alt="镜子空间概念图">
         </section>
 
         <section id="vision" class="py-20 bg-white">
@@ -114,6 +123,12 @@
                     <p class="mt-2 text-gray-600">融合老工业材料质感与当代温镜面美学，打造多元功能体验区。</p>
                 </div>
                 <div class="max-w-4xl mx-auto">
+                    <!-- 动态切换的图片容器，初始显示“书区”的占位图 -->
+                    <img class="placeholder-img mb-8 transition-opacity duration-500" 
+                         id="space-image"
+                         src="https://placehold.co/800x450/F0E9E1/A97C50?text=书区：东北阅读计划专区" 
+                         alt="书区：东北阅读计划专区">
+
                     <div class="mb-8 flex justify-center flex-wrap gap-2 md:gap-4 border-b border-gray-200">
                         <button class="tab-btn active text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-1">书区</button>
                         <button class="tab-btn text-lg font-medium px-6 py-3 border-b-2 border-transparent transition" data-target="space-tab-2">咖啡区</button>
@@ -127,7 +142,7 @@
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-2">
                             <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">咖啡区：东北四季</h3>
-                            <p class="text-gray-700">提供精品手冲与特调饮品。以“东北四季”为灵感，创作季节限定饮品系列，让味蕾也能体验到这片土地的独特风情与温度。</p>
+                            <p class="text-gray-700">提供精品咖啡与特调饮品。以“东北四季”为灵感，创作季节限定饮品与轻食系列，让味蕾也能体验到这片土地的独特风情与温度。</p>
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-3">
                             <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">文创区：东北意象</h3>
@@ -179,6 +194,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- 插入活动现场图 (此处继续沿用上传的图片，并保留错误处理) -->
+                <div class="mt-12 text-center">
+                    <img class="placeholder-img mx-auto" 
+                         style="max-width: 600px;" 
+                         src="uploaded:4b90935eb45739d27978c708ed5abe18.JPG-e68c8567-be14-42ae-a217-a162c46144bb" 
+                         alt="沙龙活动现场图"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/D3B89F/FFFFFF?text=活动现场图（加载失败，请刷新）';">
                 </div>
             </div>
         </section>
@@ -301,6 +324,10 @@
                         <p class="text-gray-600">与本地优质品牌跨界合作，共同定义城市新文化。</p>
                     </div>
                 </div>
+                <!-- 插入愿景图 -->
+                <div class="mt-12">
+                    <img class="placeholder-img" src="https://placehold.co/1200x250/A97C50/FDFBF8?text=愿景图：东北城市夜景与文化地标（高分辨率大图）" alt="文化使命愿景图">
+                </div>
             </div>
         </section>
 
@@ -345,15 +372,39 @@
                 lastScrollTop = st <= 0 ? 0 : st; 
             });
 
+            // --- 空间 tab 切换逻辑 (新增图片切换功能) ---
+
+            const spaceImageMap = {
+                'space-tab-1': { 
+                    src: 'https://placehold.co/800x450/F0E9E1/A97C50?text=书区：东北阅读计划专区', 
+                    alt: '书区：东北阅读计划专区' 
+                },
+                'space-tab-2': { 
+                    src: 'https://placehold.co/800x450/D3B89F/FFFFFF?text=咖啡区：四季特调饮品台', 
+                    alt: '咖啡区：四季特调饮品台' 
+                },
+                'space-tab-3': { 
+                    src: 'https://placehold.co/800x450/C39C77/FDFBF8?text=文创区：东北意象文创展示', 
+                    alt: '文创区：东北意象文创展示' 
+                },
+                'space-tab-4': { 
+                    src: 'https://placehold.co/800x450/A97C50/F0E9E1?text=沙龙区：活动灵活布局', 
+                    alt: '沙龙区：活动灵活布局' 
+                },
+            };
+
+            const spaceImage = document.getElementById('space-image');
             const tabButtons = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.space-tab-content');
 
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
+                    // 1. 切换按钮和文字内容
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     
                     const targetId = button.dataset.target;
+                    
                     tabContents.forEach(content => {
                         if (content.id === targetId) {
                             content.classList.remove('hidden');
@@ -361,8 +412,21 @@
                             content.classList.add('hidden');
                         }
                     });
+
+                    // 2. 切换图片源
+                    if (spaceImage && spaceImageMap[targetId]) {
+                        // 优化：添加一个短暂的透明度过渡效果
+                        spaceImage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            spaceImage.src = spaceImageMap[targetId].src;
+                            spaceImage.alt = spaceImageMap[targetId].alt;
+                            spaceImage.classList.remove('opacity-0');
+                        }, 250); // 配合 CSS transition-opacity duration-500
+                    }
                 });
             });
+
+            // --- 收益图表逻辑 ---
 
             const revenueData = {
                 labels: ['咖啡与轻食', '图书与出版', '文创与艺术衍生品', '活动与合作', '空间租赁'],
@@ -430,6 +494,8 @@
                     cutout: '60%'
                 }
             });
+
+            // --- 发展规划时间线逻辑 ---
 
             const timelineItems = document.querySelectorAll('.timeline-item');
             const timelinePanels = document.querySelectorAll('.timeline-content-panel');
