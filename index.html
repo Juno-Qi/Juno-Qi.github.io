@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Noto Sans SC', sans-serif;
-            background-color: #FDFBF8;
+            background-color: #FFFFFF; /* 更改为白色/浅色背景，与蓝色系更搭 */
             color: #333333;
         }
         .chart-container {
@@ -29,28 +29,26 @@
                 height: 400px;
             }
         }
+        /* 主题色更改为 #007BFF (现代蓝) */
         .nav-link.active {
-            color: #A97C50;
+            color: #007BFF;
             font-weight: 500;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 0.25rem;
         }
         .tab-btn.active {
-            border-color: #A97C50;
-            background-color: #F8F3ED;
-            color: #A97C50;
+            border-color: #007BFF !important;
+            background-color: #F0F8FF; /* 极浅蓝 */
+            color: #007BFF;
         }
         .timeline-item.active .timeline-dot {
-            background-color: #A97C50;
-            transform: scale(1.5);
+            background-color: #007BFF;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.3); /* 蓝色阴影 */
         }
         .timeline-item.active .timeline-content h3 {
-            color: #A97C50;
-        }
-        .placeholder-img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 0.5rem;
+            color: #007BFF !important;
+            font-weight: 700;
         }
         .image-container {
             position: relative;
@@ -61,7 +59,7 @@
         .image-wrapper {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: 400px; /* Fixed height for consistent layout */
         }
         .space-image {
             position: absolute;
@@ -70,13 +68,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.5s ease-in-out; /* Single image fade transition */
         }
         .opacity-0 {
             opacity: 0;
         }
         .hero-bg {
-            background: linear-gradient(135deg, #FDFBF8 0%, #F8F3ED 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 100%); /* 浅蓝渐变 */
         }
         .section-padding {
             padding-top: 5rem;
@@ -87,7 +85,7 @@
         }
         .hover-lift:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         .fade-in {
             opacity: 0;
@@ -99,13 +97,13 @@
             transform: translateY(0);
         }
         .brand-color {
-            color: #A97C50;
+            color: #007BFF; /* 主题蓝 */
         }
         .brand-bg {
-            background-color: #A97C50;
+            background-color: #007BFF; /* 主题蓝 */
         }
         .brand-border {
-            border-color: #A97C50;
+            border-color: #007BFF; /* 主题蓝 */
         }
     </style>
 </head>
@@ -113,8 +111,9 @@
 
     <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm transition-all duration-300">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="text-xl font-bold text-gray-800">
-                镜子空间 <span class="text-gray-500 font-light">Mirror Space</span>
+            <!-- 整合 Logo 图片 -->
+            <div class="h-8 md:h-10">
+                <img src="logo.jpg" alt="镜子空间 Mirror Space Logo" class="h-full object-contain">
             </div>
             <div class="hidden md:flex space-x-8">
                 <a href="#vision" class="nav-link text-gray-600 hover:text-gray-900 transition-colors">品牌理念</a>
@@ -142,10 +141,11 @@
                 <div class="max-w-4xl mx-auto fade-in">
                     <div class="image-container">
                         <div class="image-wrapper">
-                            <img class="space-image" src="插图1.png" alt="镜子空间概念图">
+                            <!-- Simplified to one image for fade transition -->
+                            <img class="space-image" src="插图1.png" id="space-image-current" alt="镜子空间概念图">
                         </div>
                     </div>
-                    <p class="text-sm text-gray-500 mt-2">图片来源：PAGEONE北辰荟黑胶概念店</p>
+                    <p class="text-sm text-gray-500 mt-2" id="hero-image-source">图片来源：PAGEONE北辰荟黑胶概念店</p>
                 </div>
             </div>
         </section>
@@ -158,7 +158,7 @@
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="bg-gray-50 p-8 rounded-lg text-center hover-lift fade-in">
-                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#A97C50] flex items-center justify-center">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#007BFF] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                             </svg>
@@ -167,7 +167,7 @@
                         <p class="text-gray-600">让人重新看见自我与地方的关系，在镜像中回望与自省。</p>
                     </div>
                     <div class="bg-gray-50 p-8 rounded-lg text-center hover-lift fade-in">
-                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#A97C50] flex items-center justify-center">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#007BFF] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
                             </svg>
@@ -176,7 +176,7 @@
                         <p class="text-gray-600">在工业与文艺、过去与未来之间，寻找温和而坚定的平衡。</p>
                     </div>
                     <div class="bg-gray-50 p-8 rounded-lg text-center hover-lift fade-in">
-                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#A97C50] flex items-center justify-center">
+                        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#007BFF] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
@@ -202,10 +202,7 @@
                                      id="space-image-current"
                                      src="书籍.png" 
                                      alt="书区：东北阅读计划专区">
-                                <img class="space-image opacity-0" 
-                                     id="space-image-next"
-                                     src="书籍.png" 
-                                     alt="书区：东北阅读计划专区">
+                                <!-- Removed redundant space-image-next for simpler JS fade -->
                             </div>
                         </div>
                         <p id="space-image-source" class="text-sm text-gray-500 mt-2 text-center">图片来源：丹麦哥本哈根New Mags</p>
@@ -219,19 +216,19 @@
                     </div>
                     <div id="space-tabs-content" class="bg-white p-8 rounded-lg shadow-md">
                         <div class="space-tab-content" id="space-tab-1">
-                            <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">书区：东北阅读计划</h3>
+                            <h3 class="text-2xl font-semibold mb-3 text-[#007BFF]">书区：东北阅读计划</h3>
                             <p class="text-gray-700">精选文学、人文及地方志书单，设立"东北阅读计划"专区，聚焦地方作家与影像志，构建一个深度阅读与研究东北文化的窗口。</p>
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-2">
-                            <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">咖啡区：东北四季</h3>
+                            <h3 class="text-2xl font-semibold mb-3 text-[#007BFF]">咖啡区：东北四季</h3>
                             <p class="text-gray-700">提供精品咖啡与特调饮品。以"东北四季"为灵感，创作季节限定饮品和轻食系列，让味蕾也能体验到这片土地的独特风情与温度。</p>
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-3">
-                            <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">文创区：东北意象</h3>
+                            <h3 class="text-2xl font-semibold mb-3 text-[#007BFF]">文创区：东北意象</h3>
                             <p class="text-gray-700">推出"东北意象"系列联名文创，包括明信片、帆布袋、海报等。结合东北符号进行当代设计，将文化记忆转化为可带走的生活美学。</p>
                         </div>
                         <div class="space-tab-content hidden" id="space-tab-4">
-                            <h3 class="text-2xl font-semibold mb-3 text-[#A97C50]">沙龙区：镜中东北</h3>
+                            <h3 class="text-2xl font-semibold mb-3 text-[#007BFF]">沙龙区：镜中东北</h3>
                             <p class="text-gray-700">灵活的活动空间，定期举办讲座、展览与共读会。以"镜中东北"为主题进行策展，并邀请艺术家驻地创作，成为思想碰撞与艺术发生的现场。</p>
                         </div>
                     </div>
@@ -247,24 +244,24 @@
                 </div>
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
                     <div class="fade-in">
-                        <h3 class="text-2xl font-semibold mb-6 text-gray-700 border-l-4 border-[#D3B89F] pl-4">策展与出版计划</h3>
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-700 border-l-4 border-[#9FD8FF] pl-4">策展与出版计划</h3>
                         <ul class="space-y-4">
                             <li class="flex items-start">
-                                <span class="text-[#A97C50] font-bold mr-3 mt-1">●</span>
+                                <span class="text-[#007BFF] font-bold mr-3 mt-1">●</span>
                                 <p><strong class="font-semibold">"镜中东北"年度书单：</strong> 聚焦东北作家、摄影师与地方叙事，构建权威性文化索引。</p>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-[#A97C50] font-bold mr-3 mt-1">●</span>
+                                <span class="text-[#007BFF] font-bold mr-3 mt-1">●</span>
                                 <p><strong class="font-semibold">地方出版合作：</strong> 与本地出版社联合策划选题，深度挖掘工业记忆、城市人文等主题。</p>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-[#A97C50] font-bold mr-3 mt-1">●</span>
+                                <span class="text-[#007BFF] font-bold mr-3 mt-1">●</span>
                                 <p><strong class="font-semibold">东北影像志：</strong> 收集整理东北地区的历史影像与当代摄影作品，建立视觉档案库。</p>
                             </li>
                         </ul>
                     </div>
                     <div class="fade-in">
-                        <h3 class="text-2xl font-semibold mb-6 text-gray-700 border-l-4 border-[#D3B89F] pl-4">核心文化活动</h3>
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-700 border-l-4 border-[#9FD8FF] pl-4">核心文化活动</h3>
                         <div class="space-y-6">
                             <div class="bg-gray-50 p-4 rounded-lg hover-lift">
                                 <h4 class="font-semibold text-lg">「镜像读书会」</h4>
@@ -307,7 +304,7 @@
                     <div class="bg-white p-8 rounded-lg shadow-md hover-lift fade-in">
                         <h3 class="text-2xl font-semibold mb-2" id="revenue-title">收益构成</h3>
                         <p class="text-gray-600 mb-4 text-3xl font-bold" id="revenue-percentage">100%</p>
-                        <h4 class="font-semibold text-lg mb-2 text-[#A97C50]">在地特色价值</h4>
+                        <h4 class="font-semibold text-lg mb-2 text-[#007BFF]">在地特色价值</h4>
                         <p class="text-gray-700 min-h-[100px]" id="revenue-description">将鼠标悬停在图表板块上，查看每个模块的在地价值特色。我们确保每一份收益都与文化使命紧密相连。</p>
                     </div>
                 </div>
@@ -324,7 +321,7 @@
                     <div class="w-1/4 relative">
                         <div class="border-r-2 border-gray-200 absolute h-full top-0" style="left: 15px"></div>
                         <ul class="space-y-12">
-                            <li class="timeline-item active" data-target="timeline-content-1">
+                            <li class="timeline-item active cursor-pointer" data-target="timeline-content-1">
                                 <div class="flex items-center">
                                     <div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center">
                                         <div class="w-4 h-4 bg-white rounded-full"></div>
@@ -334,7 +331,7 @@
                                     </div>
                                 </div>
                             </li>
-                             <li class="timeline-item" data-target="timeline-content-2">
+                             <li class="timeline-item cursor-pointer" data-target="timeline-content-2">
                                 <div class="flex items-center">
                                     <div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center">
                                         <div class="w-4 h-4 bg-white rounded-full"></div>
@@ -344,7 +341,7 @@
                                     </div>
                                 </div>
                             </li>
-                             <li class="timeline-item" data-target="timeline-content-3">
+                             <li class="timeline-item cursor-pointer" data-target="timeline-content-3">
                                 <div class="flex items-center">
                                     <div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center">
                                         <div class="w-4 h-4 bg-white rounded-full"></div>
@@ -354,7 +351,7 @@
                                     </div>
                                 </div>
                             </li>
-                             <li class="timeline-item" data-target="timeline-content-4">
+                             <li class="timeline-item cursor-pointer" data-target="timeline-content-4">
                                 <div class="flex items-center">
                                     <div class="timeline-dot bg-gray-200 w-8 h-8 rounded-full z-10 transition-all duration-300 flex items-center justify-center">
                                         <div class="w-4 h-4 bg-white rounded-full"></div>
@@ -400,7 +397,7 @@
                 <p class="mt-2 text-gray-600 max-w-2xl mx-auto fade-in">不只是一个地方书店，而是东北文化"自我凝视"与"对外表达"的窗口。</p>
                 <div class="mt-12 grid md:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-sm hover-lift fade-in">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#A97C50] flex items-center justify-center">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#007BFF] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
@@ -409,7 +406,7 @@
                         <p class="text-gray-600">与本地艺术家、摄影师、作家深度合作，成为创意发生的土壤。</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-sm hover-lift fade-in">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#A97C50] flex items-center justify-center">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#007BFF] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                             </svg>
@@ -418,7 +415,7 @@
                         <p class="text-gray-600">以"镜头下的东北"为主题制作系列短片，线上扩大文化影响力。</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-sm hover-lift fade-in">
-                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#A97C50] flex items-center justify-center">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#007BFF] flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                             </svg>
@@ -444,7 +441,7 @@
     
     <footer class="bg-white">
        <div class="container mx-auto px-6 py-20 text-center">
-           <p class="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed max-w-4xl mx-auto">"它不只是<span class="font-semibold text-[#A97C50]">书店</span>，<br>更是文化的<span class="font-semibold text-[#A97C50]">记录与表达</span>。"</p>
+           <p class="text-2xl md:text-3xl font-light text-gray-700 leading-relaxed max-w-4xl mx-auto">"它不只是<span class="font-semibold text-[#007BFF]">书店</span>，<br>更是文化的<span class="font-semibold text-[#007BFF]">记录与表达</span>。"</p>
            <p class="mt-8 text-gray-500">从沈阳出发，反射整个东北的光。</p>
            <div class="mt-12 pt-8 border-t border-gray-200">
                <p class="text-gray-500">© 2025 镜子空间 Mirror Space. 保留所有权利。</p>
@@ -466,7 +463,7 @@
             
             fadeElements.forEach(el => observer.observe(el));
 
-            // 导航激活状态
+            // 导航激活状态和滚动隐藏
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
             const header = document.getElementById('header');
@@ -476,7 +473,8 @@
                 let current = '';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 100) {
+                    // Adjust offset for better timing
+                    if (pageYOffset >= sectionTop - 150) { 
                         current = section.getAttribute('id');
                     }
                 });
@@ -488,6 +486,7 @@
                     }
                 });
 
+                // Header hide/show on scroll
                 let st = window.pageYOffset || document.documentElement.scrollTop;
                 if (st > lastScrollTop && st > 100){
                     header.style.top = '-100px';
@@ -497,11 +496,12 @@
                 lastScrollTop = st <= 0 ? 0 : st; 
             });
 
+
             // --- 空间 tab 切换逻辑 ---
 
             const spaceImageMap = {
                 'space-tab-1': { 
-                    src: ' 书籍.png', 
+                    src: '书籍.png', 
                     alt: '书区：东北阅读计划专区',
                     source: '丹麦哥本哈根New Mags'
                 },
@@ -523,7 +523,6 @@
             };
 
             const currentImage = document.getElementById('space-image-current');
-            const nextImage = document.getElementById('space-image-next');
             const spaceImageSource = document.getElementById('space-image-source');
             const tabButtons = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.space-tab-content');
@@ -539,11 +538,12 @@
 
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // 1. 切换按钮和文字内容
+                    const targetId = button.dataset.target;
+                    const { src: newSrc, alt: newAlt, source: newSource } = spaceImageMap[targetId];
+
+                    // 1. Update button and content (MUST be done first)
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-                    
-                    const targetId = button.dataset.target;
                     
                     tabContents.forEach(content => {
                         if (content.id === targetId) {
@@ -553,117 +553,153 @@
                         }
                     });
 
-                    // 2. 平滑切换图片
-                    if (spaceImageMap[targetId]) {
-                        // 设置下一张图片
-                        nextImage.src = spaceImageMap[targetId].src;
-                        nextImage.alt = spaceImageMap[targetId].alt;
-                        
-                        // 当下一张图片加载完成后执行切换
-                        nextImage.onload = function() {
-                            // 下一张图片淡入
-                            nextImage.classList.remove('opacity-0');
-                            
-                            // 当前图片淡出
-                            currentImage.classList.add('opacity-0');
-                            
-                            // 更新图片来源说明
-                            spaceImageSource.innerText = '图片来源：' + spaceImageMap[targetId].source;
-                            
-                            // 交换图片角色
-                            setTimeout(() => {
-                                currentImage.src = nextImage.src;
-                                currentImage.alt = nextImage.alt;
-                                currentImage.classList.remove('opacity-0');
-                                nextImage.classList.add('opacity-0');
-                            }, 500); // 等待过渡完成
-                        };
+                    // 检查图片是否需要更新
+                    if (currentImage.src.includes(newSrc.trim())) {
+                        spaceImageSource.textContent = `图片来源：${newSource}`;
+                        return;
                     }
+
+                    // 2. Fade out
+                    currentImage.classList.add('opacity-0');
+                    
+                    // 等待 fade-out 完成 (0.5s)
+                    setTimeout(() => {
+                        currentImage.src = newSrc;
+                        currentImage.alt = newAlt;
+                        spaceImageSource.textContent = `图片来源：${newSource}`;
+                        
+                        // Fade in the new image
+                        currentImage.classList.remove('opacity-0');
+                    }, 500); 
                 });
             });
 
-            // --- 收益图表逻辑 ---
+            // --- 商业模式 Chart.js 逻辑 ---
 
             const revenueData = {
-                labels: ['咖啡与轻食', '图书与出版', '文创与艺术衍生品', '活动与合作', '空间租赁'],
+                labels: ['书籍销售', '咖啡/轻食', '文创产品', '文化活动/沙龙'],
                 datasets: [{
-                    label: '收益占比',
-                    data: [30, 25, 25, 15, 5],
-                    backgroundColor: [
-                        '#A97C50',
-                        '#C39C77',
-                        '#D3B89F',
-                        '#E4D4C7',
-                        '#F0E9E1'
-                    ],
-                    borderColor: '#FDFBF8',
-                    hoverOffset: 8
+                    data: [35, 30, 20, 15], // 假设的收益比例 (总和 100)
+                    // 更改为蓝色系配色
+                    backgroundColor: ['#007BFF', '#40A9FF', '#9FD8FF', '#004F99'], 
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    hoverOffset: 10,
                 }]
             };
-            
-            const revenueDescriptions = [
-                '以"东北四季"为灵感的饮品系列，将地方风味融入日常消费，提供独特的味觉体验。',
-                '通过策展出版物与地方作者联名，将知识转化为具有收藏价值和文化深度的产品。',
-                '结合东北符号进行当代设计，让文化记忆成为可触碰、可携带的时尚生活品。',
-                '通过高质量的文化活动吸引品牌联动与文化赞助，扩大社会影响力并实现商业价值。',
-                '为影视拍摄与文艺展览提供独特质感的场地，成为城市文化叙事的一部分。'
-            ];
 
-            const revenueTitle = document.getElementById('revenue-title');
-            const revenuePercentage = document.getElementById('revenue-percentage');
-            const revenueDescription = document.getElementById('revenue-description');
+            const revenueDescriptions = {
+                '书籍销售': {
+                    percentage: '35%',
+                    description: '通过「东北阅读计划」深度策展书单，提高书籍的专业性与附加值，吸引高粘性阅读客群。'
+                },
+                '咖啡/轻食': {
+                    percentage: '30%',
+                    description: '以「东北四季」主题特调饮品吸引日常客流，提供高品质、差异化的餐饮体验，保障空间现金流。'
+                },
+                '文创产品': {
+                    percentage: '20%',
+                    description: '「东北意象」系列文创是品牌IP价值的核心变现，高毛利产品，辐射线上渠道。'
+                },
+                '文化活动/沙龙': {
+                    percentage: '15%',
+                    description: '通过付费讲座、策展合作与场地租赁，提升品牌势能，带来高价值、低频次的收入。'
+                }
+            };
+
+            const titleEl = document.getElementById('revenue-title');
+            const percentageEl = document.getElementById('revenue-percentage');
+            const descriptionEl = document.getElementById('revenue-description');
+            
+            // Function to reset the panel state
+            const resetPanel = () => {
+                titleEl.textContent = '收益构成';
+                percentageEl.textContent = '100%';
+                descriptionEl.textContent = '将鼠标悬停在图表板块上，查看每个模块的在地价值特色。我们确保每一份收益都与文化使命紧密相连。';
+                percentageEl.classList.remove('brand-color');
+            };
 
             const ctx = document.getElementById('revenueChart').getContext('2d');
-            const revenueChart = new Chart(ctx, {
-                type: 'doughnut',
+            new Chart(ctx, {
+                type: 'pie',
                 data: revenueData,
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    onResize: resetPanel, // Reset on resize to prevent weird states
                     plugins: {
                         legend: {
                             position: 'bottom',
                             labels: {
+                                usePointStyle: true,
                                 padding: 20,
-                                font: {
-                                    size: 14,
-                                    family: "'Noto Sans SC', sans-serif"
-                                }
                             }
                         },
                         tooltip: {
-                            enabled: true
-                        },
-                    },
-                    onHover: (event, chartElement) => {
-                        if (chartElement.length) {
-                            const index = chartElement[0].index;
-                            revenueTitle.innerText = revenueData.labels[index];
-                            revenuePercentage.innerText = revenueData.datasets[0].data[index] + '%';
-                            revenueDescription.innerText = revenueDescriptions[index];
-                        } else {
-                             revenueTitle.innerText = '收益构成';
-                             revenuePercentage.innerText = '100%';
-                             revenueDescription.innerText = '将鼠标悬停在图表板块上，查看每个模块的在地价值特色。我们确保每一份收益都与文化使命紧密相连。';
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
                         }
                     },
-                    cutout: '60%'
+                    // Interaction handler for updating the panel
+                    onHover: (event, elements, chart) => {
+                        if (elements.length > 0) {
+                            const index = elements[0].index;
+                            const label = revenueData.labels[index];
+                            const data = revenueDescriptions[label];
+
+                            titleEl.textContent = label;
+                            percentageEl.textContent = data.percentage;
+                            descriptionEl.textContent = data.description;
+                            percentageEl.classList.add('brand-color');
+
+                        } else {
+                            // Reset state when not hovering
+                            resetPanel();
+                        }
+                    }
                 }
             });
+            // Initial call to ensure the panel has default text
+            resetPanel();
 
-            // --- 发展规划时间线逻辑 ---
+
+            // --- 发展规划 Timeline 逻辑 ---
 
             const timelineItems = document.querySelectorAll('.timeline-item');
             const timelinePanels = document.querySelectorAll('.timeline-content-panel');
 
+            // Set initial active text color (remove gray from the first one)
+            document.querySelector('.timeline-item[data-target="timeline-content-1"] h3').classList.remove('text-gray-500');
+
             timelineItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    timelineItems.forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
+                    const targetPanelId = item.dataset.target;
 
-                    const targetId = item.dataset.target;
+                    // 1. Remove active state from all items
+                    timelineItems.forEach(i => {
+                        i.classList.remove('active');
+                        // Reset text color to gray
+                        i.querySelector('h3').classList.add('text-gray-500'); 
+                    });
+
+                    // 2. Add active state to the clicked item
+                    item.classList.add('active');
+                    // Set active text color
+                    item.querySelector('h3').classList.remove('text-gray-500'); 
+
+                    // 3. Switch content panel
                     timelinePanels.forEach(panel => {
-                        if (panel.id === targetId) {
+                        if (panel.id === targetPanelId) {
                             panel.classList.remove('hidden');
                         } else {
                             panel.classList.add('hidden');
